@@ -43,7 +43,7 @@ namespace ConceptsConsole
             //Se a covariância fosse aplicada indiscriminadamente, isso poderia resultar em comportamento indefinido ou falhas de tempo de execução devido a incompatibilidades de tipos.
 
             //Em resumo, a covariância é uma característica projetada para tornar o código mais expressivo e flexível.
-
+            //Só posso fazer isso porque tem o "out" na assinatura da interface: IReadableListAnimal<out T>
             IReadableListAnimal<Animal> animais = listCat;
 
             IEnumerable<Animal> animal = new List<Cat>();

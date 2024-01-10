@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid", "Solid\Solid.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceConcepts", "InterfaceConcepts\InterfaceConcepts.csproj", "{81598B70-825D-4BD5-BD37-5509F5A4BDBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceptsConsole", "ConceptsConsole\ConceptsConsole.csproj", "{C9EBACE5-D6FF-48CB-A81E-684CD013CD20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{81598B70-825D-4BD5-BD37-5509F5A4BDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81598B70-825D-4BD5-BD37-5509F5A4BDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81598B70-825D-4BD5-BD37-5509F5A4BDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EBACE5-D6FF-48CB-A81E-684CD013CD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EBACE5-D6FF-48CB-A81E-684CD013CD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EBACE5-D6FF-48CB-A81E-684CD013CD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EBACE5-D6FF-48CB-A81E-684CD013CD20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

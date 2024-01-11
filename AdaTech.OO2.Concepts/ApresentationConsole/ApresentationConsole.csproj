@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AbstractClass\AbstractClass.csproj" />
+    <ProjectReference Include="..\GenericsConcepts\GenericsConcepts.csproj" />
   </ItemGroup>
 
 </Project>

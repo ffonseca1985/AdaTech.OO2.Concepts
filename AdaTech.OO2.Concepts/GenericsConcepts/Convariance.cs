@@ -15,7 +15,7 @@ namespace GenericsConcepts
         T[] Elementos { get; }
     }
 
-    public interface IWritableAnimal<T> where T : IAnimal
+    public interface IWritableAnimal<in T> where T : IAnimal
     {
         bool Add(int posicao, T elemento);
     }

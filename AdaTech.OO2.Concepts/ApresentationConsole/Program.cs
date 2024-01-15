@@ -1,7 +1,6 @@
 ﻿using AbstractClass.Constracts;
 using AbstractClass.Models;
 using GenericsConcepts;
-using System.Collections.Generic;
 
 namespace ApresentationConsole
 {
@@ -17,7 +16,7 @@ namespace ApresentationConsole
 
             //listObj = listStr;
 
-            List<IAnimal> aniaml = new List<IAnimal>();
+            IEnumerable<IAnimal> aniaml = new List<IAnimal>();
             
             Console.WriteLine("Hello, World!");
         }

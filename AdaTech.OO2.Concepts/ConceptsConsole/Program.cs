@@ -1,8 +1,14 @@
 ﻿using AbstractClass.Contracts;
 using AbstractClass.Models;
+using DependencyInjector.DependencyInjector;
 using GenericsConcepts;
 using InterfaceConcepts.Contracts;
 using InterfaceConcepts.Models;
+using Microsoft.Extensions.DependencyInjection;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Net.Http.Headers;
+using System.Security.Authentication.ExtendedProtection;
 
 namespace ConceptsConsole
 {
@@ -10,9 +16,29 @@ namespace ConceptsConsole
     {
         static void Main(string[] args)
         {
+            DI();
             InterfaceConcepts();
             AbstractClass();
             GenericsVarianceAnContravariance();
+        }
+
+        public static void DI()
+        {
+            //O princípio da Inversão de Controle (IoC) tem por objetivo remover as
+            //dependências (remover o acoplamento) entre os objetos de uma aplicação,
+            //tornando-a mais desacoplada e manutenível
+
+            //Tipo de Injecao:
+            //- por metodo
+            //- por construtor
+            //- por parametros
+            //- Service Locator => Classes que servem como localizadores
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddSingleton<CustomerDao>((x) => new CustomerDao(new SqlConnection("")));
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+            var dao = serviceProvider.GetService<CustomerDao>();
+
         }
 
         public static void InterfaceConcepts()

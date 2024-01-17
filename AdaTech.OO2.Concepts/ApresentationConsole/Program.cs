@@ -8,9 +8,27 @@ using System.Data.SqlClient;
 
 namespace ApresentationConsole
 {
+    using Solid.InterfaceSegregationPrinciple;
     internal class Program
     {
         static void Main(string[] args)
+        {
+            RelatorioRH relatorioRH = new RelatorioRH();
+
+            //Covariance
+            IFuncionario funcionario = new Gerente();
+
+            //Em generics List não é covariante, embora o objeto seja.
+            List<ISubordinado> subordinado = new List<ISubordinado>()
+            {
+                new Gerente(),
+                new Vendedor()
+            };
+
+            relatorioRH.ListarSuperior(subordinado);
+        }
+
+        static void ClientServiceLocator()
         {
             //DAO => Data Access Object => a classe
             //DAL => Data access Layer => a camada /projeto

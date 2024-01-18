@@ -8,17 +8,46 @@ using System.Data.SqlClient;
 
 namespace ApresentationConsole
 {
+    using Solid.DependencyInjectionPrincipal;
     using Solid.InterfaceSegregationPrinciple;
+    using Solid.OpenClosePrinciple;
+
     internal class Program
     {
         static void Main(string[] args)
         {
+            //DIP
+            Extrato extrato = new Extrato();
+
+            extrato.Add(new RendaFixa());
+            extrato.Add(new RendaVariavel());
+
+            //OCP
+            Pedido pedido = new Pedido();
+
+            Console.WriteLine("SEM Transportadora");
+            Console.WriteLine(pedido.Frete);
+
+            //Inversao de Controle
+            pedido.Transportadora = new TransportadoraCorreios();
+            Console.WriteLine("Com Correios");
+            Console.WriteLine(pedido.Frete);
+
+            pedido.Transportadora = new TransportadoraJadLog();
+            Console.WriteLine("Com JadLog");
+            Console.WriteLine(pedido.Frete);
+
+            pedido.Transportadora = new TransportadoraCometa();
+            Console.WriteLine("Com Cometa");
+            Console.WriteLine(pedido.Frete);
+
             RelatorioRH relatorioRH = new RelatorioRH();
 
             //Covariance
             IFuncionario funcionario = new Gerente();
 
             //Em generics List não é covariante, embora o objeto seja.
+            //ISP
             List<ISubordinado> subordinado = new List<ISubordinado>()
             {
                 new Gerente(),
